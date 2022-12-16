@@ -9,7 +9,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "daisyui": "^2.45.0",
+    "framer-motion": "^7.10.0",
     "next": "13.0.2",
+    "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "zod": "^3.18.0"
