@@ -1,4 +1,5 @@
 import React from "react";
+import ThemeSwitch from "./ThemeSwitch";
 
 const NavBar = () => {
   return (
@@ -7,6 +8,7 @@ const NavBar = () => {
         <div className="flex-1">
           <a className="btn-ghost btn text-xl normal-case">daisyUI</a>
         </div>
+        <ThemeSwitch />
         <div className="flex-none">
           <div className="dropdown-end dropdown">
             <label tabIndex={0} className="btn-ghost btn-circle btn">
@@ -28,6 +30,7 @@ const NavBar = () => {
                 <span className="badge badge-sm indicator-item">8</span>
               </div>
             </label>
+
             <div
               tabIndex={0}
               className="card dropdown-content card-compact mt-3 w-52 bg-base-100 shadow"
