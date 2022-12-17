@@ -3,20 +3,20 @@ import { motion } from "framer-motion";
 const imgVariants = {
   hidden: {
     opacity: 0,
-    x: -150,
+    x: -170,
   },
   visible: {
     opacity: 1,
-    x: -50,
+    x: -90,
     transition: {
       duration: 1,
     },
   },
 };
-
+// TODO: add Loading page
 const Landing = () => {
   return (
-    <div className="container relative mx-auto flex justify-between overflow-hidden">
+    <div className=" relative mx-auto flex justify-end overflow-hidden">
       <motion.img
         variants={imgVariants}
         initial="hidden"
@@ -27,10 +27,8 @@ const Landing = () => {
         width={4656}
         height={3792}
       />
-      {/* left pad */}
-      <div className="z-10 min-h-screen w-1/12  bg-base-100"></div>
       {/* right pad */}
-      <div className="z-10 min-h-screen w-1/2  bg-base-100"></div>
+      <div className="z-10 flex min-h-screen  w-1/2 items-center bg-base-100"></div>
     </div>
   );
 };

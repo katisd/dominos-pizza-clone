@@ -5,7 +5,7 @@ import NavBar from "../Components/NavBar";
 
 const Home: NextPage = () => {
   return (
-    <div className="h-screen overflow-hidden bg-base-100 ">
+    <div className="container mx-auto  h-screen overflow-hidden bg-base-100 ">
       <NavBar />
       <Landing />
     </div>
