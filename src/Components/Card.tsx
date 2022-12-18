@@ -43,7 +43,7 @@ const Card: React.FC<CardProps> = (props) => {
     },
     hover: {
       scale: 1.05,
-      boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+      // boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
       transition: {
         duration: 0.3,
       },
@@ -67,7 +67,7 @@ const Card: React.FC<CardProps> = (props) => {
       animate="visible"
       whileHover="hover"
       whileTap="hover"
-      className={`card w-${cardWidth} bg-base-100 shadow-xl`}
+      className={`card w-${cardWidth} bg-base-100 shadow-xl hover:drop-shadow-2xl`}
     >
       <figure>
         <img
@@ -92,9 +92,11 @@ const Card: React.FC<CardProps> = (props) => {
         <p>{props.data.toppings.map((x) => `${x}, `)}</p>
         <div className="card-actions justify-end">
           {props.data.vegetarian && (
-            <div className="badge-outline badge ">vegetarian</div>
+            <div className="badge-success badge-outline badge ">vegetarian</div>
           )}
-          {props.data.spicy && <div className="badge-outline badge">Spicy</div>}
+          {props.data.spicy && (
+            <div className="badge-error badge-outline badge">Spicy</div>
+          )}
         </div>
       </div>
     </motion.div>
