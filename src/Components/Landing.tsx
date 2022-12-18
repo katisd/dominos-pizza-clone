@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 const imgVariants = {
   hidden: {
     opacity: 0,
@@ -28,7 +29,15 @@ const Landing = () => {
         height={3792}
       />
       {/* right pad */}
-      <div className="z-10 flex min-h-screen  w-1/2 items-center bg-base-100"></div>
+      <div className="z-10 flex min-h-screen w-1/2 flex-col items-center justify-center bg-base-100">
+        <h1 className="text-7xl font-bold">Domino&apos;s Pizza</h1>
+        <Link
+          href={"/menu"}
+          className="btn-secondary btn-lg btn mt-10 rounded-full "
+        >
+          Order Now
+        </Link>
+      </div>
     </div>
   );
 };

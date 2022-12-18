@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import ThemeSwitch from "./ThemeSwitch";
 
@@ -5,7 +6,9 @@ const NavBar = () => {
   return (
     <div className="container navbar fixed inset-x-0 top-0 z-50 mx-auto w-full bg-base-100">
       <div className="flex-1">
-        <a className="btn-ghost btn text-xl normal-case">daisyUI</a>
+        <Link href={"/"} className="btn-ghost btn text-xl normal-case">
+          Domino&apos;s Pizza
+        </Link>
       </div>
       <ThemeSwitch />
       <div className="flex-none">
