@@ -3,6 +3,16 @@ import React from "react";
 
 interface CardProps {
   size?: "sx" | "md" | "lg";
+  data: {
+    id: number;
+    name: string;
+    pic: string;
+    type: string;
+    toppings: string[];
+    new: boolean;
+    vegetarian: boolean;
+    spicy: boolean;
+  };
 }
 
 const Card: React.FC<CardProps> = (props) => {
@@ -63,24 +73,28 @@ const Card: React.FC<CardProps> = (props) => {
         <img
           className="w-full object-cover"
           loading="lazy"
-          src="https://cache.dominos.com/wam/prod/market/TH/_th/images/promo/30a9b5ea-bf89-41e7-a356-62d98daf9c3b.jpg"
-          alt="Shoes"
+          src={props.data.pic}
+          alt="Pizza image"
         />
       </figure>
       <div className="card-body">
         <h2 className="card-title">
-          Shoes!
-          <motion.div
-            variants={badgeVariants}
-            className="badge-secondary badge"
-          >
-            NEW
-          </motion.div>
+          {props.data.name}
+          {props.data.new && (
+            <motion.div
+              variants={badgeVariants}
+              className="badge-secondary badge"
+            >
+              NEW
+            </motion.div>
+          )}
         </h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <p>{props.data.toppings.map((x) => `${x}, `)}</p>
         <div className="card-actions justify-end">
-          <div className="badge-outline badge">Fashion</div>
-          <div className="badge-outline badge">Products</div>
+          {props.data.vegetarian && (
+            <div className="badge-outline badge ">vegetarian</div>
+          )}
+          {props.data.spicy && <div className="badge-outline badge">Spicy</div>}
         </div>
       </div>
     </motion.div>

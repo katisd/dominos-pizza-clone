@@ -1,0 +1,126 @@
+[
+  {
+    "id": 1,
+    "name": "Pepperoni Passion",
+    "pic": "https://www.dominos.at/gallery/fmobile/2346ipar.png",
+    "type": "favorite",
+    "toppings": ["Tomatensauce", "Mozzarella", "Domino's Pepperoni Salami"],
+    "new": false,
+    "vegetarian": false,
+    "spicy": true
+  },
+  {
+    "id": 2,
+    "name": "Vegetariana",
+    "pic": "https://www.dominos.at/gallery/fmobile/3015ipar.png",
+    "type": "favorite",
+    "toppings": [
+      "Tomato sauce",
+      "mozzarella",
+      "red onion",
+      "mixed peppers",
+      "mushrooms",
+      "black olives",
+      "corn"
+    ],
+    "new": false,
+    "vegetarian": true,
+    "spicy": false
+  },
+  {
+    "id": 3,
+    "name": "Hawaii",
+    "pic": "https://www.dominos.at/gallery/fmobile/2344ipar.png",
+    "type": "favorite",
+    "toppings": ["Tomato sauce", "mozzarella", "ham", "pineapple"],
+    "new": false,
+    "vegetarian": false,
+    "spicy": false
+  },
+  {
+    "id": 4,
+    "name": "Meat Feast",
+    "pic": "https://www.dominos.at/gallery/fmobile/2345ipar.png",
+    "type": "favorite",
+    "toppings": [
+      "Tomato sauce",
+      "mozzarella",
+      "Domino's Pepperoni Salami",
+      "ham",
+      "beef",
+      "bacon"
+    ],
+    "new": false,
+    "vegetarian": false,
+    "spicy": false
+  },
+  {
+    "id": 5,
+    "name": "Chicken Supreme",
+    "pic": "https://www.dominos.at/gallery/fmobile/2347ipar.png",
+    "type": "favorite",
+    "toppings": [
+      "Tomato sauce",
+      "mozzarella",
+      "chicken",
+      "red onion",
+      "mushrooms",
+      "sweetcorn"
+    ],
+    "new": false,
+    "vegetarian": false,
+    "spicy": false
+  },
+  {
+    "id": 6,
+    "name": "Chicken Bacon Ranch",
+    "pic": "https://www.dominos.at/gallery/fmobile/2348ipar.png",
+    "type": "favorite",
+    "toppings": [
+      "Tomato sauce",
+      "mozzarella",
+      "chicken",
+      "bacon",
+      "red onion",
+      "mushrooms",
+      "sweetcorn"
+    ],
+    "new": true,
+    "vegetarian": false,
+    "spicy": false
+  },
+  {
+    "id": 7,
+    "name": "Chicken BBQ",
+    "pic": "https://www.dominos.at/gallery/fmobile/2349ipar.png",
+    "type": "favorite",
+    "toppings": [
+      "Tomato sauce",
+      "mozzarella",
+      "chicken",
+      "red onion",
+      "mushrooms",
+      "sweetcorn"
+    ],
+    "new": false,
+    "vegetarian": false,
+    "spicy": false
+  },
+  {
+    "id": 8,
+    "name": "Burger Pizza",
+    "pic": "https://www.dominos.at/gallery/fmobile/2350ipar.png",
+    "type": "favorite",
+    "toppings": [
+      "Tomato sauce",
+      "mozzarella",
+      "beef",
+      "red onion",
+      "mushrooms",
+      "sweetcorn"
+    ],
+    "new": false,
+    "vegetarian": false,
+    "spicy": false
+  }
+]
