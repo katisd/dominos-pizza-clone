@@ -16,7 +16,7 @@ const imgVariants = {
 // TODO: add Loading page
 const Landing = () => {
   return (
-    <div className=" relative mx-auto flex justify-end overflow-hidden">
+    <div className=" relative mx-auto flex h-screen justify-end overflow-hidden bg-base-100">
       <motion.img
         variants={imgVariants}
         initial="hidden"
