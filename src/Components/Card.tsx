@@ -1,8 +1,11 @@
-import { motion } from "framer-motion";
-import React from "react";
+import { motion, useInView } from "framer-motion";
+import React, { useRef } from "react";
 
-interface CardProps {
-  size?: "sx" | "md" | "lg";
+type CardProps = {
+  setInfo?: (data: boolean) => void;
+  setcurrent?: (data: number) => void;
+  showDescrib?: boolean;
+  moreCl?: string;
   data: {
     id: number;
     name: string;
@@ -13,37 +16,28 @@ interface CardProps {
     vegetarian: boolean;
     spicy: boolean;
   };
-}
+};
 
 const Card: React.FC<CardProps> = (props) => {
-  // default size is lg
-  let cardWidth = 96;
-  switch (props.size) {
-    case "sx":
-      cardWidth = 48;
-      break;
-    case "md":
-      cardWidth = 72;
-      break;
-    case "lg":
-      cardWidth = 96;
-  }
-  // variant for card
+  // useInView hook for entry view animation
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  // variants for animation
   const cardVariants = {
     hidden: {
       opacity: 0,
       y: 100,
     },
     visible: {
-      opacity: 1,
-      y: 0,
+      opacity: isInView ? 1 : 0,
+      y: isInView ? 0 : 100,
       transition: {
         duration: 0.5,
       },
     },
     hover: {
       scale: 1.05,
-      // boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
       transition: {
         duration: 0.3,
       },
@@ -61,45 +55,55 @@ const Card: React.FC<CardProps> = (props) => {
   };
 
   return (
-    <motion.div
-      variants={cardVariants}
-      initial="hidden"
-      animate="visible"
-      whileHover="hover"
-      whileTap="hover"
-      className={`card w-${cardWidth} bg-base-100 shadow-xl hover:drop-shadow-2xl`}
+    <div
+      // setInfo: True when clicked on card to wiev more info about pizza
+      // setcurrent: set current card to show more info about pizza
+      onClick={() => {
+        props.setInfo && props.setInfo(true);
+        props.setcurrent && props.setcurrent(props.data.id - 1);
+      }}
+      className={` ${props.moreCl} card flex-none place-items-center  bg-base-100 shadow-xl hover:drop-shadow-2xl`}
     >
-      <figure>
+      <motion.div
+        className="object-covers"
+        ref={ref}
+        variants={cardVariants}
+        initial="hidden"
+        animate="visible"
+        whileHover="hover"
+      >
         <img
-          className="w-full object-cover"
           loading="lazy"
+          className="w-full"
           src={props.data.pic}
           alt="Pizza image"
         />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">
-          {props.data.name}
-          {props.data.new && (
-            <motion.div
-              variants={badgeVariants}
-              className="badge-secondary badge"
-            >
-              NEW
-            </motion.div>
-          )}
-        </h2>
-        <p>{props.data.toppings.map((x) => `${x}, `)}</p>
-        <div className="card-actions justify-end">
-          {props.data.vegetarian && (
-            <div className="badge-success badge-outline badge ">vegetarian</div>
-          )}
-          {props.data.spicy && (
-            <div className="badge-error badge-outline badge">Spicy</div>
-          )}
+        <div className="card-body">
+          <h2 className="card-title">
+            {props.data.name}
+            {props.data.new && (
+              <motion.div
+                variants={badgeVariants}
+                className="badge-secondary badge"
+              >
+                NEW
+              </motion.div>
+            )}
+          </h2>
+          <p>{props.showDescrib && props.data.toppings.map((x) => `${x}, `)}</p>
+          <div className="card-actions justify-end">
+            {props.data.vegetarian && (
+              <div className="badge-success badge-outline badge ">
+                vegetarian
+              </div>
+            )}
+            {props.data.spicy && (
+              <div className="badge-error badge-outline badge">Spicy</div>
+            )}
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 

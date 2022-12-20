@@ -1,23 +1,18 @@
 import type { NextPage } from "next";
 import MenuList from "../Components/MenuList";
 import NavBar from "../Components/Layouts/NavBar";
-// import AboutPizza from "../Components/AboutPizza";
-// const testProps = {
-//   id: 1,
-//   name: "Pepperoni Passion",
-//   pic: "https://www.dominos.at/gallery/fmobile/2346ipar.png",
-//   type: "favorite",
-//   toppings: ["Tomatensauce", "Mozzarella", "Domino's Pepperoni Salami"],
-//   new: false,
-//   vegetarian: false,
-//   spicy: true,
-// };
+import { useState } from "react";
+import Carousel from "../Components/Carousel";
 const Menu: NextPage = () => {
+  const [info, setInfo] = useState(false);
+  const [current, setCurrent] = useState(0);
   return (
-    <div className="container mx-auto ">
-      <NavBar />
-      <MenuList />
-      {/* <AboutPizza {...testProps} /> */}
+    <div>
+      <div className="container mx-auto ">
+        <NavBar />
+        {!info && <MenuList setcurrent={setCurrent} setInfo={setInfo} />}
+        {info && <Carousel setCurrent={setCurrent} current={current} />}
+      </div>
     </div>
   );
 };
