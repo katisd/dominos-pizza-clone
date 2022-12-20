@@ -109,7 +109,7 @@
   {
     "id": 8,
     "name": "Burger Pizza",
-    "pic": "https://www.dominos.at/gallery/fmobile/2350ipar.png",
+    "pic": "https://www.dominos.at/gallery/fmobile/3449ipar.png",
     "type": "favorite",
     "toppings": [
       "Tomato sauce",
@@ -122,5 +122,38 @@
     "new": false,
     "vegetarian": false,
     "spicy": false
+  },
+  {
+    "id": 9,
+    "name": "Meat Lovers Pizza",
+    "toppings": [
+      "tomato sauce",
+      "mozzarella cheese",
+      "pepperoni",
+      "sausage",
+      "ham",
+      "bacon"
+    ],
+    "pic": "https://www.dominos.at/gallery/fmobile/2345ipar.png",
+    "type": "favorite",
+    "spicy": false,
+    "vegetarian": false,
+    "new": false
+  },
+  {
+    "id": 10,
+    "name": "Spicy Italian Pizza",
+    "type": "favorite",
+    "toppings": [
+      "tomato sauce",
+      "mozzarella cheese",
+      "pepperoni",
+      "Italian sausage",
+      "jalapeno peppers"
+    ],
+    "pic": "https://www.dominos.at/gallery/fmobile/3321ipar.png",
+    "spicy": true,
+    "vegetarian": false,
+    "new": false
   }
 ]
