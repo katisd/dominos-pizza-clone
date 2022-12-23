@@ -65,7 +65,7 @@ const Card: React.FC<CardProps> = (props) => {
       className={` ${props.moreCl} card flex-none place-items-center  bg-base-100 shadow-xl hover:drop-shadow-2xl`}
     >
       <motion.div
-        className="object-covers"
+        className="object-covers select-none"
         ref={ref}
         variants={cardVariants}
         initial="hidden"
@@ -73,8 +73,9 @@ const Card: React.FC<CardProps> = (props) => {
         whileHover="hover"
       >
         <img
+          draggable="false"
           loading="lazy"
-          className="w-full"
+          className="drag-none w-full select-none"
           src={props.data.pic}
           alt="Pizza image"
         />
