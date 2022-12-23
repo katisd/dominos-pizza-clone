@@ -12,7 +12,13 @@ const MenuList: React.FC<MenuListProps> = ({ setInfo, setcurrent }) => {
   return (
     <div className=" grid grid-cols-1 gap-10  px-5 pt-[80px]  md:grid-cols-2 lg:grid-cols-3">
       {data.map((x) => (
-        <Card setInfo={setInfo} setcurrent={setcurrent} key={x.id} data={x} />
+        <Card
+          setInfo={setInfo}
+          setcurrent={setcurrent}
+          moreCl="bg-base-100"
+          key={x.id}
+          data={x}
+        />
       ))}
     </div>
   );

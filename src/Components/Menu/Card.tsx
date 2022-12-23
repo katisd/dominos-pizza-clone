@@ -62,7 +62,7 @@ const Card: React.FC<CardProps> = (props) => {
         props.setInfo && props.setInfo(true);
         props.setcurrent && props.setcurrent(props.data.id - 1);
       }}
-      className={` ${props.moreCl} card flex-none place-items-center  bg-base-100 shadow-xl hover:drop-shadow-2xl`}
+      className={` ${props.moreCl} card flex-none place-items-center  shadow-xl hover:drop-shadow-2xl`}
     >
       <motion.div
         className="object-covers select-none"
