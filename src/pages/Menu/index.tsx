@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import MenuList from "../Components/MenuList";
-import NavBar from "../Components/Layouts/NavBar";
+import MenuList from "./MenuList";
+import NavBar from "../../Components/NavBar";
 import { useState } from "react";
-import Carousel from "../Components/Carousel";
+import Carousel from "./Carousel";
 const Menu: NextPage = () => {
   const [info, setInfo] = useState(false);
   const [current, setCurrent] = useState(0);

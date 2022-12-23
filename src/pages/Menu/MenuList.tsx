@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import data from "../../public/pizzaList.json";
+import data from "../../../public/pizzaList.json";
 // type of onClick handler function
 
 type MenuListProps = {

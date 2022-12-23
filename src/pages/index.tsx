@@ -1,13 +1,14 @@
 import type { NextPage } from "next";
 import React from "react";
-import Landing from "../Components/Landing";
-import NavBar from "../Components/Layouts/NavBar";
+
+import NavBar from "../Components/NavBar";
+import HomePage from "./HomePage";
 
 const Home: NextPage = () => {
   return (
     <div className="container mx-auto ">
       <NavBar />
-      <Landing />
+      <HomePage />
     </div>
   );
 };

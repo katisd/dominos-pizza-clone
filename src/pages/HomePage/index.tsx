@@ -17,15 +17,15 @@ const imgVariants = {
   },
 };
 // TODO: add Loading page
-const Landing = () => {
+const HomePage = () => {
   return (
-    <div className="relative mt-5 flex h-screen flex-col overflow-hidden  bg-base-100 sm:items-center md:items-start ">
+    <div className="relative flex h-screen flex-col overflow-hidden  bg-base-100 sm:items-center md:items-start ">
       {/* picture */}
       <motion.img
         variants={imgVariants}
         initial="hidden"
         animate="visible"
-        className=" mt-5 h-[50%] overflow-clip object-cover  md:absolute md:left-8 md:top-0 md:ml-[30vw] md:min-h-screen md:w-full"
+        className=" mt-10 h-[50%] overflow-clip object-cover  md:absolute md:left-8 md:top-0 md:ml-[30vw] md:min-h-screen md:w-full"
         src="/PizzaLanding.jpg"
         alt="Pizza image"
         width={4656}
@@ -48,4 +48,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default HomePage;

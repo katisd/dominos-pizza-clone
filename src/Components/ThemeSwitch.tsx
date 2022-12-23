@@ -23,7 +23,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ size }) => {
   };
   size ??= 5;
   return (
-    <label className="swap-rotate swap btn-ghost btn-circle btn">
+    <label className="swap btn-ghost swap-rotate btn-circle btn">
       <input
         type="checkbox"
         //

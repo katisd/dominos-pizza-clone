@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Page } from "framer";
 import Card from "./Card";
-import pages from "../../public/pizzaList.json";
+import pages from "../../../public/pizzaList.json";
 
 type CarouselProps = {
   setCurrent: (data: number) => void;

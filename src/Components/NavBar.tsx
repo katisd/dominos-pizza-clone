@@ -32,7 +32,7 @@ const NavBar = () => {
               <span className="badge badge-sm indicator-item">8</span>
             </div>
           </label>
-
+          {/* TODO: cart item */}
           <div
             tabIndex={0}
             className="card dropdown-content card-compact mt-3 w-52 bg-base-100 shadow"
