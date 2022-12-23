@@ -17,7 +17,7 @@ const imgVariants = {
   },
 };
 // TODO: add Loading page
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <div className="relative flex h-screen flex-col overflow-hidden  bg-base-100 sm:items-center md:items-start ">
       {/* picture */}

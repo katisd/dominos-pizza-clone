@@ -76,13 +76,13 @@ const Card: React.FC<CardProps> = (props) => {
           draggable="false"
           loading="lazy"
           className="drag-none w-full select-none"
-          src={props.data.pic}
+          src={props?.data?.pic}
           alt="Pizza image"
         />
         <div className="card-body">
           <h2 className="card-title">
-            {props.data.name}
-            {props.data.new && (
+            {props?.data?.name}
+            {props?.data?.new && (
               <motion.div
                 variants={badgeVariants}
                 className="badge-secondary badge"
@@ -91,14 +91,16 @@ const Card: React.FC<CardProps> = (props) => {
               </motion.div>
             )}
           </h2>
-          <p>{props.showDescrib && props.data.toppings.map((x) => `${x}, `)}</p>
+          <p>
+            {props?.showDescrib && props?.data?.toppings.map((x) => `${x}, `)}
+          </p>
           <div className="card-actions justify-end">
-            {props.data.vegetarian && (
+            {props?.data?.vegetarian && (
               <div className="badge-success badge-outline badge ">
                 vegetarian
               </div>
             )}
-            {props.data.spicy && (
+            {props?.data?.spicy && (
               <div className="badge-error badge-outline badge">Spicy</div>
             )}
           </div>

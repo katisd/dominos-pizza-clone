@@ -1,9 +1,8 @@
-import type { NextPage } from "next";
 import MenuList from "./MenuList";
-import NavBar from "../../Components/NavBar";
-import { useState } from "react";
+import NavBar from "../Layouts/NavBar";
+import React, { useState } from "react";
 import Carousel from "./Carousel";
-const Menu: NextPage = () => {
+const Menu: React.FC = () => {
   const [info, setInfo] = useState(false);
   const [current, setCurrent] = useState(0);
   return (
