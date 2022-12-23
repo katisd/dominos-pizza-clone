@@ -27,6 +27,45 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
 
   return (
     <div>
+      {/* TODO: add arrow */}
+      <div className="flex  h-[100vh] content-center items-center justify-between">
+        {/* left arrow */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          className="h-6 w-6"
+          onClick={() => {
+            props.setCurrent(props.current - 1);
+          }}
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
+          />
+        </svg>
+        {/* Right arrows */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="h-6 w-6"
+          onClick={() => {
+            props.setCurrent(props.current + 1);
+          }}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </div>
       <Page
         // width and height of Page need to be equal to width and height of Card
         width={"80vw"}
