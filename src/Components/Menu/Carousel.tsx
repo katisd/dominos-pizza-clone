@@ -83,7 +83,7 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
       <div>
         <Page
           // width and height of Page need to be equal to width and height of Card
-          width={"50vw"}
+          width={"50%"}
           height={"50vh"}
           radius={30}
           center
