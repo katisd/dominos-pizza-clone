@@ -76,7 +76,7 @@ const Card: React.FC<CardProps> = (props) => {
           draggable="false"
           loading="lazy"
           className="drag-none w-full select-none"
-          src={props?.data?.pic}
+          src={`/pic/${props?.data?.name}.png`}
           alt="Pizza image"
         />
         <div className="card-body">
