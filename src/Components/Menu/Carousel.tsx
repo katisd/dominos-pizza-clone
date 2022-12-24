@@ -31,7 +31,7 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
       <div className="z-10 flex h-[100vh] content-center items-center justify-between">
         {/* left arrow */}
         <div
-          className="flex h-[100vh] items-center"
+          className="flex h-[100vh] basis-1/4 items-center"
           onClick={() => {
             props.setCurrent(props.current - 1);
           }}
@@ -44,7 +44,7 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
             stroke="currentColor"
             className="h-6 w-6"
             onClick={() => {
-              props.setCurrent(props.current - 1);
+              props.setCurrent((props.current - 1) % pages.length);
             }}
           >
             <path
@@ -56,9 +56,9 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
         </div>
         {/* Right arrows */}
         <div
-          className="flex h-[100vh] items-center"
+          className="flex h-[100vh] basis-1/4 items-center justify-end"
           onClick={() => {
-            props.setCurrent(props.current + 1);
+            props.setCurrent((props.current + 1) % pages.length);
           }}
         >
           <svg
