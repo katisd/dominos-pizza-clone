@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from "react";
 type Order = {
   pizzaId: number | null;
   setPizzaId: (pizzaId: number) => void;
-  size: "small" | "medium" | "large" | string;
+  size: "Small" | "Medium" | "Large" | string;
   setSize: (size: string) => void;
   price: number;
   setPrice: (price: number) => void;
@@ -16,10 +16,14 @@ const OrderContex = createContext({} as Order);
 export function useOrderContex() {
   return useContext(OrderContex);
 }
-export function OrderProvider({ children }: any) {
+type OrderProviderProps = {
+  children: React.ReactNode;
+};
+
+export const OrderProvider: React.FC<OrderProviderProps> = ({ children }) => {
   const [pizzaId, setPizzaId] = useState(null as number | null);
   const [ThinDough, setThinDough] = useState("Normal");
-  const [size, setSize] = useState("small");
+  const [size, setSize] = useState("Small");
   const [price, setPrice] = useState(0);
   return (
     <OrderContex.Provider
@@ -37,4 +41,4 @@ export function OrderProvider({ children }: any) {
       {children}
     </OrderContex.Provider>
   );
-}
+};
