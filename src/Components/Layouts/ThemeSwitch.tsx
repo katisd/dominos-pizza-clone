@@ -23,10 +23,10 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ size }) => {
   };
   size ??= 5;
   return (
-    <label className="swap btn-ghost swap-rotate btn-circle btn">
+    <label className="swap-rotate swap btn-ghost btn-circle btn">
       <input
         type="checkbox"
-        //
+        className="h-full w-full"
         defaultChecked={theme !== "dark"}
         onClick={handler}
       />

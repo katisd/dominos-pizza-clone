@@ -7,7 +7,8 @@
     "toppings": ["Tomatensauce", "Mozzarella", "Domino's Pepperoni Salami"],
     "new": false,
     "vegetarian": false,
-    "spicy": true
+    "spicy": true,
+    "price": 7.99
   },
   {
     "id": 2,
@@ -25,7 +26,8 @@
     ],
     "new": false,
     "vegetarian": true,
-    "spicy": false
+    "spicy": false,
+    "price": 8.99
   },
   {
     "id": 3,
@@ -35,7 +37,8 @@
     "toppings": ["Tomato sauce", "mozzarella", "ham", "pineapple"],
     "new": false,
     "vegetarian": false,
-    "spicy": false
+    "spicy": false,
+    "price": 7.5
   },
   {
     "id": 4,
@@ -52,7 +55,8 @@
     ],
     "new": false,
     "vegetarian": false,
-    "spicy": false
+    "spicy": false,
+    "price": 6.99
   },
   {
     "id": 5,
@@ -69,7 +73,8 @@
     ],
     "new": false,
     "vegetarian": false,
-    "spicy": false
+    "spicy": false,
+    "price": 6.99
   },
   {
     "id": 6,
@@ -87,7 +92,8 @@
     ],
     "new": true,
     "vegetarian": false,
-    "spicy": false
+    "spicy": false,
+    "price": 7.59
   },
   {
     "id": 7,
@@ -104,7 +110,8 @@
     ],
     "new": false,
     "vegetarian": false,
-    "spicy": false
+    "spicy": false,
+    "price": 6.94
   },
   {
     "id": 8,
@@ -121,7 +128,8 @@
     ],
     "new": false,
     "vegetarian": false,
-    "spicy": false
+    "spicy": false,
+    "price": 7.99
   },
   {
     "id": 9,
@@ -138,7 +146,8 @@
     "type": "favorite",
     "spicy": false,
     "vegetarian": false,
-    "new": false
+    "new": false,
+    "price": 7.99
   },
   {
     "id": 10,
@@ -154,6 +163,7 @@
     "pic": "https://www.dominos.at/gallery/fmobile/3321ipar.png",
     "spicy": true,
     "vegetarian": false,
-    "new": false
+    "new": false,
+    "price": 7.99
   }
 ]

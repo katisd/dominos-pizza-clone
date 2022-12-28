@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import ThemeSwitch from "./ThemeSwitch";
 
 const NavBar = () => {
@@ -46,11 +47,16 @@ const NavBar = () => {
             </div>
           </div>
         </div>
+        {/* profile */}
         <div className="dropdown-end dropdown">
           <label tabIndex={0} className="btn-ghost btn-circle avatar btn">
             <div className="w-10 rounded-full">
-              <img src="https://placeimg.com/80/80/people" alt="profile" />
-              {/* TODO:change img to Image */}
+              <Image
+                width={100}
+                height={100}
+                src="/people.jfif"
+                alt="profile"
+              />
             </div>
           </label>
           <ul
