@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { Page } from "framer";
 import Card from "./Card";
 import pages from "../../../public/pizzaList.json";
+import ChooseButton from "./MenuComponent/ChooseButton";
+import BillArea from "./MenuComponent/BillArea";
+import { useOrderContex } from "./MenuComponent/OrderContex";
 
 type CarouselProps = {
   setCurrent: (data: number) => void;
@@ -25,13 +28,44 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
     };
   }, []);
 
+  const { ThinDough, setThinDough, pizzaId, setPizzaId, setSize, size } =
+    useOrderContex();
+
+  useEffect(() => {
+    props?.current + 1 === pizzaId ? null : setPizzaId(props.current + 1);
+  }, [props, pizzaId, setPizzaId]);
   return (
     <div>
-      {/* TODO: add arrow */}
-      <div className="z-10 flex h-[100vh] content-center items-center justify-between">
+      {/* Tops */}
+      <div className="flex h-[50vh] content-center items-center justify-between">
+        <Page
+          // width and height of Page need to be equal to width and height of Card
+          width={"50%"}
+          height={"40%"}
+          radius={30}
+          top={"30%"}
+          center
+          // given key as windowsize so that motion components rerender on window resize
+          key={windowSize.innerWidth}
+          currentPage={props.current}
+          onChangePage={(current, _) => {
+            props.setCurrent(current % pages.length);
+          }}
+        >
+          {pages.map((data) => {
+            return (
+              <Card
+                setcurrent={props.setCurrent}
+                moreCl="w-full h-[100%] bg-none"
+                data={data}
+                key={data.id}
+              />
+            );
+          })}
+        </Page>
         {/* left arrow */}
         <div
-          className="flex h-[100vh] basis-1/4 items-center"
+          className="flex w-full basis-1/4 items-center"
           onClick={() => {
             props.setCurrent(props.current - 1);
           }}
@@ -40,7 +74,7 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="currentColor"
             className="h-6 w-6"
             onClick={() => {
@@ -48,15 +82,15 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
             }}
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M15.75 19.5L8.25 12l7.5-7.5"
             />
           </svg>
         </div>
         {/* Right arrows */}
         <div
-          className="flex h-[100vh] basis-1/4 items-center justify-end"
+          className="flex  basis-1/4 items-center justify-end"
           onClick={() => {
             props.setCurrent((props.current + 1) % pages.length);
           }}
@@ -80,33 +114,54 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
           </svg>
         </div>
       </div>
-      <div>
-        <Page
-          // width and height of Page need to be equal to width and height of Card
-          width={"50%"}
-          height={"50vh"}
-          radius={30}
-          center
-          // given key as windowsize so that motion components rerender on window resize
-          key={windowSize.innerWidth}
-          currentPage={props.current}
-          onChangePage={(current, _) => {
-            props.setCurrent(current);
-          }}
-        >
-          {pages.map((data) => {
-            return (
-              <Card
-                setcurrent={props.setCurrent}
-                moreCl="w-[50vw] h-[50vh] bg-none"
-                data={data}
-                key={data.id}
+      {/* bttm */}
+      <div className="flex h-[50vh] flex-col p-10 md:flex-row">
+        {/* Name+choose area */}
+        <div className={`space-y-space md:basis-2/3`}>
+          {/* Name */}
+          <div
+            className={`flex flex-row items-baseline space-x-spaceIn text-2xl`}
+          >
+            <span>{pages[props.current]?.name}</span>
+            <span className="card-actions justify-end">
+              {pages[props.current]?.vegetarian && (
+                <div className="badge badge-success badge-outline ">
+                  vegetarian
+                </div>
+              )}
+              {pages[props.current]?.spicy && (
+                <div className="badge badge-outline badge-error">Spicy</div>
+              )}
+            </span>
+          </div>
+          <div
+            className={`flex flex-col space-y-space md:flex-row md:space-y-0 md:space-x-space`}
+          >
+            {/* chosedough */}
+            <div className={`space-y-spaceIn`}>
+              <div>Dough</div>
+              <ChooseButton
+                arrX={["Normal", "Thin"]}
+                setx={setThinDough}
+                x={ThinDough}
               />
-            );
-          })}
-        </Page>
+            </div>
+            {/* choose size */}
+            <div className={`flex flex-col space-y-spaceIn`}>
+              <div>Size</div>
+              <ChooseButton
+                arrX={["Small", "Medium", "Large"]}
+                setx={setSize}
+                x={size}
+              />
+            </div>
+          </div>
+        </div>
+        {/* divider */}
+        <div className="divider divide-primary-content md:divider-horizontal" />
+        {/* Bill */}
+        <BillArea ThinDough={ThinDough} pizzaId={pizzaId} size={size} />
       </div>
-      <div>{/* TODO: Add describtion Area with option to order pizza */}</div>
     </div>
   );
 };
