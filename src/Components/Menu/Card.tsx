@@ -94,16 +94,18 @@ const Card: React.FC<CardProps> = (props) => {
           <p>
             {props?.showDescrib && props?.data?.toppings.map((x) => `${x}, `)}
           </p>
-          <div className="card-actions justify-end">
-            {props?.data?.vegetarian && (
-              <div className="badge-success badge-outline badge ">
-                vegetarian
-              </div>
-            )}
-            {props?.data?.spicy && (
-              <div className="badge-error badge-outline badge">Spicy</div>
-            )}
-          </div>
+          {props?.showDescrib && (
+            <div className="card-actions justify-end">
+              {props?.data?.vegetarian && (
+                <div className="badge-success badge-outline badge ">
+                  vegetarian
+                </div>
+              )}
+              {props?.data?.spicy && (
+                <div className="badge-error badge-outline badge">Spicy</div>
+              )}
+            </div>
+          )}
         </div>
       </motion.div>
     </div>
