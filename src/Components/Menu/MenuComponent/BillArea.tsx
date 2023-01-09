@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import pizzas from "../../../../public/pizzaList.json";
+import { useShoppingCart } from "../../context/CartContext";
 
 type BillAreaProps = {
   pizzaId: number | null;
@@ -9,9 +10,27 @@ type BillAreaProps = {
 
 // BillArea component is used to show the name, describtion and price of the pizza selected by giving the pizzaId , size and ThinDough as props
 const BillArea: React.FC<BillAreaProps> = ({ pizzaId, size, ThinDough }) => {
+  const { increaseItemQuantity } = useShoppingCart();
+  const price = pizzas.find((pizza) => pizza.id === pizzaId)?.price;
+  const [alert, setalert] = useState(false);
+  const [pizza, setPizza] = useState(0);
+  const [myTimeOut, setMyTimeOut] = useState<NodeJS.Timeout | null>(null);
+  useEffect(() => {
+    if (alert) {
+      if (myTimeOut != null) {
+        clearTimeout(myTimeOut);
+      }
+      setMyTimeOut(
+        setTimeout(() => {
+          setalert(false);
+          setPizza(0);
+        }, 1000)
+      );
+    }
+  }, [pizza]); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
-    <div className="w-full space-y-spaceIn py-3 md:basis-1/3">
-      {/* name */}
+    <div className=" w-full space-y-spaceIn py-3 md:basis-1/3">
       <div>
         {pizzas
           .filter((pizza) => pizza.id === pizzaId)
@@ -19,18 +38,27 @@ const BillArea: React.FC<BillAreaProps> = ({ pizzaId, size, ThinDough }) => {
             <div key={x.id}>{x.name}</div>
           ))}
       </div>
-      <div className="flex flex-col justify-between space-y-space md:flex-row md:space-y-0">
+      <div className="flex flex-row  justify-between space-y-0">
         {/* describtion */}
         <ul className="list-inside list-disc">
           <li>{ThinDough}</li>
           <li>{size}</li>
         </ul>
         {/* price& add to cart */}
-        <button className=" flex h-12 w-28 flex-row items-center justify-between overflow-clip rounded-full  border-2 border-base-content hover:border-primary hover:bg-primary">
+        <button
+          onClick={() => {
+            increaseItemQuantity(
+              pizzaId || -1,
+              (ThinDough ? "thin" : "normal") + size,
+              price
+            );
+            setalert(true);
+            setPizza(pizza + 1);
+          }}
+          className=" flex h-12 w-28 flex-row items-center justify-between overflow-clip rounded-full  border-2 border-base-content hover:border-primary hover:bg-primary"
+        >
           {/* price */}
-          <span className="  bg-base-100 p-5">
-            {pizzas.find((pizza) => pizza.id === pizzaId)?.price}
-          </span>
+          <span className="  bg-base-100 p-5">{price}</span>
           {/* cart icon */}
           <div className="h-full bg-transparent p-3 ">
             <svg
@@ -50,6 +78,16 @@ const BillArea: React.FC<BillAreaProps> = ({ pizzaId, size, ThinDough }) => {
           </div>
         </button>
       </div>
+      {/* Toast */}
+      {alert && (
+        <div className="toast">
+          <div className="alert alert-success">
+            <div>
+              <span>{pizza} pizza added</span>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
