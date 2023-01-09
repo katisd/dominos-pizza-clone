@@ -28,8 +28,8 @@ const HomePage: React.FC = () => {
         className=" mt-10 h-[50%] overflow-clip object-cover  md:absolute md:left-8 md:top-0 md:ml-[30vw] md:min-h-screen md:w-full"
         src="/PizzaLanding.jpg"
         alt="Pizza image"
-        width={4656}
-        height={3792}
+        width={200}
+        height={200}
       />
       {/* right pad */}
       <div className="z-10 my-auto flex flex-col items-center justify-center bg-base-100 text-center md:min-h-screen md:w-1/2 ">

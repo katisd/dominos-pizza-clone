@@ -65,7 +65,7 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
         </Page>
         {/* left arrow */}
         <div
-          className="flex w-full basis-1/4 items-center"
+          className="flex w-full basis-1/4 justify-center"
           onClick={() => {
             props.setCurrent(props.current - 1);
           }}
@@ -90,7 +90,7 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
         </div>
         {/* Right arrows */}
         <div
-          className="flex  basis-1/4 items-center justify-end"
+          className="flex  basis-1/4 items-center justify-center"
           onClick={() => {
             props.setCurrent((props.current + 1) % pages.length);
           }}
@@ -125,12 +125,12 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
             <span>{pages[props.current]?.name}</span>
             <span className="card-actions justify-end">
               {pages[props.current]?.vegetarian && (
-                <div className="badge badge-success badge-outline ">
+                <div className="badge-success badge-outline badge ">
                   vegetarian
                 </div>
               )}
               {pages[props.current]?.spicy && (
-                <div className="badge badge-outline badge-error">Spicy</div>
+                <div className="badge-error badge-outline badge">Spicy</div>
               )}
             </span>
           </div>
