@@ -40,7 +40,7 @@ const NavBar = () => {
           {/* TODO: cart item */}
           <div
             tabIndex={0}
-            className="card dropdown-content card-compact mt-3 w-52 bg-base-100 shadow"
+            className="card-compact card dropdown-content mt-3 w-52 bg-base-100 shadow"
           >
             <div className="card-body">
               <span className="text-lg font-bold">
@@ -48,7 +48,9 @@ const NavBar = () => {
               </span>
               <span className="text-info">Subtotal: {getSumPrice()}</span>
               <div className="card-actions">
-                <button className="btn-primary btn-block btn">View cart</button>
+                <Link href={"/Cart"} className="btn-primary btn-block btn">
+                  View cart
+                </Link>
               </div>
             </div>
           </div>
