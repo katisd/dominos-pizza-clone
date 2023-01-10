@@ -11,7 +11,16 @@ type BillAreaProps = {
 // BillArea component is used to show the name, describtion and price of the pizza selected by giving the pizzaId , size and ThinDough as props
 const BillArea: React.FC<BillAreaProps> = ({ pizzaId, size, ThinDough }) => {
   const { increaseItemQuantity } = useShoppingCart();
-  const price = pizzas.find((pizza) => pizza.id === pizzaId)?.price;
+  let add = 0;
+  if (size === "Small") {
+    add = 0;
+  } else if (size === "Medium") {
+    add = 1.5;
+  } else if (size === "Large") {
+    add = 3;
+  }
+  const price =
+    (pizzas.find((pizza) => pizza.id === pizzaId)?.price || 0) + add;
   const [alert, setalert] = useState(false);
   const [pizza, setPizza] = useState(0);
   const [myTimeOut, setMyTimeOut] = useState<NodeJS.Timeout | null>(null);
@@ -47,18 +56,15 @@ const BillArea: React.FC<BillAreaProps> = ({ pizzaId, size, ThinDough }) => {
         {/* price& add to cart */}
         <button
           onClick={() => {
-            increaseItemQuantity(
-              pizzaId || -1,
-              (ThinDough ? "thin" : "normal") + size,
-              price
-            );
+            console.log(pizzaId, ThinDough, size, price);
+            increaseItemQuantity(pizzaId || -1, ThinDough + size, price);
             setalert(true);
             setPizza(pizza + 1);
           }}
-          className=" flex h-12 w-28 flex-row items-center justify-between overflow-clip rounded-full  border-2 border-base-content hover:border-primary hover:bg-primary"
+          className=" flex h-12 max-w-fit flex-row items-center justify-between overflow-clip rounded-full  border-2 border-base-content hover:border-primary hover:bg-primary"
         >
           {/* price */}
-          <span className="  bg-base-100 p-5">{price}</span>
+          <span className="  bg-base-100 p-5">{price.toFixed(2)} $</span>
           {/* cart icon */}
           <div className="h-full bg-transparent p-3 ">
             <svg

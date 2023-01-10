@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Pepperoni Passion",
-    "pic": "https://www.dominos.at/gallery/fmobile/2346ipar.png",
+    "pic": "/pic/Pepperoni Passion.png",
     "type": "favorite",
     "toppings": ["Tomatensauce", "Mozzarella", "Domino's Pepperoni Salami"],
     "new": false,
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "name": "Vegetariana",
-    "pic": "https://www.dominos.at/gallery/fmobile/3015ipar.png",
+    "pic": "/pic/Vegetariana.png",
     "type": "favorite",
     "toppings": [
       "Tomato sauce",
@@ -32,7 +32,7 @@
   {
     "id": 3,
     "name": "Hawaii",
-    "pic": "https://www.dominos.at/gallery/fmobile/2344ipar.png",
+    "pic": "/pic/Hawaii.png",
     "type": "favorite",
     "toppings": ["Tomato sauce", "mozzarella", "ham", "pineapple"],
     "new": false,
@@ -43,7 +43,7 @@
   {
     "id": 4,
     "name": "Meat Feast",
-    "pic": "https://www.dominos.at/gallery/fmobile/2345ipar.png",
+    "pic": "/pic/Meat Feast.png",
     "type": "favorite",
     "toppings": [
       "Tomato sauce",
@@ -61,7 +61,7 @@
   {
     "id": 5,
     "name": "Chicken Supreme",
-    "pic": "https://www.dominos.at/gallery/fmobile/2347ipar.png",
+    "pic": "/pic/Chicken Supreme.png",
     "type": "favorite",
     "toppings": [
       "Tomato sauce",
@@ -79,7 +79,7 @@
   {
     "id": 6,
     "name": "Chicken Bacon Ranch",
-    "pic": "https://www.dominos.at/gallery/fmobile/2348ipar.png",
+    "pic": "/pic/Chicken Bacon Ranch.png",
     "type": "favorite",
     "toppings": [
       "Tomato sauce",
@@ -98,7 +98,7 @@
   {
     "id": 7,
     "name": "Chicken BBQ",
-    "pic": "https://www.dominos.at/gallery/fmobile/2349ipar.png",
+    "pic": "/pic/Chicken BBQ.png",
     "type": "favorite",
     "toppings": [
       "Tomato sauce",
@@ -116,7 +116,7 @@
   {
     "id": 8,
     "name": "Burger Pizza",
-    "pic": "https://www.dominos.at/gallery/fmobile/3449ipar.png",
+    "pic": "/pic/Burger Pizza.png",
     "type": "favorite",
     "toppings": [
       "Tomato sauce",
@@ -142,7 +142,7 @@
       "ham",
       "bacon"
     ],
-    "pic": "https://www.dominos.at/gallery/fmobile/2345ipar.png",
+    "pic": "/pic/Meat Lovers Pizza.png",
     "type": "favorite",
     "spicy": false,
     "vegetarian": false,
@@ -160,7 +160,7 @@
       "Italian sausage",
       "jalapeno peppers"
     ],
-    "pic": "https://www.dominos.at/gallery/fmobile/3321ipar.png",
+    "pic": "/pic/Spicy Italian Pizza.png",
     "spicy": true,
     "vegetarian": false,
     "new": false,

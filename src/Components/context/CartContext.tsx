@@ -17,7 +17,7 @@ type Pizza = {
 type ShoppingCartContextTouse = {
   getListOfPizzas: () => CartItem[];
   getListOfPizzasFromId: (id: number) => Pizza[];
-  getQuantityFromIdAndDAS: (id: number, DoughtAndSize: string) => number;
+  getPizzaFromIdAndDAS: (id: number, DoughtAndSize: string) => Pizza | null;
   increaseItemQuantity: (
     id: number,
     DoughtAndSize: string,
@@ -74,13 +74,12 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
               return {
                 ...item,
                 pizzas: [
-                  ...item.pizzas.map((pizza) => {
-                    if (pizza.DoughtAndSize == DoughtAndSize) {
-                      return { ...pizza, quantity: pizza.quantity + 1 };
-                    } else {
-                      return pizza;
-                    }
-                  }),
+                  ...item.pizzas,
+                  {
+                    DoughtAndSize: DoughtAndSize,
+                    quantity: 1,
+                    price: price ? price : 0,
+                  },
                 ],
               };
             } else {
@@ -192,18 +191,17 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
       );
     }, 0);
   }
-  function getQuantityFromIdAndDAS(id: number, DoughtAndSize: string) {
+  function getPizzaFromIdAndDAS(id: number, DoughtAndSize: string) {
     return (
       cart
         .find((item) => item.id == id)
-        ?.pizzas.find((pizza) => pizza.DoughtAndSize == DoughtAndSize)
-        ?.quantity || 0
+        ?.pizzas.find((pizza) => pizza.DoughtAndSize == DoughtAndSize) || null
     );
   }
   return (
     <ShoppingCartContext.Provider
       value={{
-        getQuantityFromIdAndDAS,
+        getPizzaFromIdAndDAS,
         getListOfPizzas,
         getListOfPizzasFromId,
         increaseItemQuantity,
