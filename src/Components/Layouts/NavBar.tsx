@@ -40,7 +40,7 @@ const NavBar = () => {
           {/* TODO: cart item */}
           <div
             tabIndex={0}
-            className="card-compact card dropdown-content mt-3 w-52 bg-base-100 shadow"
+            className="card dropdown-content card-compact mt-3 w-52 bg-base-100 shadow"
           >
             <div className="card-body">
               <span className="text-lg font-bold">
@@ -67,7 +67,7 @@ const NavBar = () => {
               />
             </div>
           </label>
-          <ul
+          {/* <ul
             tabIndex={0}
             className="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
           >
@@ -83,7 +83,7 @@ const NavBar = () => {
             <li>
               <a>Logout</a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div>

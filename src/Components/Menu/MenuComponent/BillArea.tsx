@@ -39,7 +39,7 @@ const BillArea: React.FC<BillAreaProps> = ({ pizzaId, size, ThinDough }) => {
   }, [pizza]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className=" w-full space-y-spaceIn py-3 md:basis-1/3">
+    <div className=" w-full space-y-spaceIn py-3 lg:basis-1/3">
       <div>
         {pizzas
           .filter((pizza) => pizza.id === pizzaId)
@@ -61,7 +61,7 @@ const BillArea: React.FC<BillAreaProps> = ({ pizzaId, size, ThinDough }) => {
             setalert(true);
             setPizza(pizza + 1);
           }}
-          className=" flex h-12 max-w-fit flex-row items-center justify-between overflow-clip rounded-full  border-2 border-base-content hover:border-primary hover:bg-primary"
+          className="flex h-12 max-w-fit flex-row items-center justify-between overflow-clip rounded-full  border-2 border-base-content hover:border-primary hover:bg-primary"
         >
           {/* price */}
           <span className="  bg-base-100 p-5">{price.toFixed(2)} $</span>
@@ -86,7 +86,7 @@ const BillArea: React.FC<BillAreaProps> = ({ pizzaId, size, ThinDough }) => {
       </div>
       {/* Toast */}
       {alert && (
-        <div className="toast">
+        <div className="toast-end toast toast-top top-16">
           <div className="alert alert-success">
             <div>
               <span>{pizza} pizza added</span>

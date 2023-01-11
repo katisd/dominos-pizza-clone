@@ -115,7 +115,7 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
         </div>
       </div>
       {/* bttm */}
-      <div className="flex h-[50vh] flex-col p-10 md:flex-row">
+      <div className="flex h-[50vh] flex-col p-10 lg:flex-row">
         {/* Name+choose area */}
         <div className={`space-y-space md:basis-2/3`}>
           {/* Name */}
@@ -158,7 +158,7 @@ const Carousel: React.FC<CarouselProps> = ({ ...props }) => {
           </div>
         </div>
         {/* divider */}
-        <div className="divider divide-primary-content md:divider-horizontal" />
+        <div className="divider divide-primary-content lg:divider-horizontal" />
         {/* Bill */}
         <BillArea ThinDough={ThinDough} pizzaId={pizzaId} size={size} />
       </div>

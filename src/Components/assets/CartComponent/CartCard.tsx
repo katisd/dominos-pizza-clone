@@ -32,7 +32,7 @@ export const CartCard: React.FC<CartCardProps> = ({
             <h2 className="card-title">{pizzaName}</h2>
             <p>{pizzaDoughtAndSize}</p>
           </div>
-          <h2 className="justify-end">Price: {sumPrice} $</h2>
+          <h2 className="justify-end">Price: {sumPrice.toFixed(2)} $</h2>
         </div>
         <div className="card-actions justify-end">{children}</div>
       </div>
