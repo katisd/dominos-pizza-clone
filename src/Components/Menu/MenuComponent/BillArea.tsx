@@ -64,7 +64,7 @@ const BillArea: React.FC<BillAreaProps> = ({ pizzaId, size, ThinDough }) => {
           className="flex h-12 max-w-fit flex-row items-center justify-between overflow-clip rounded-full  border-2 border-base-content hover:border-primary hover:bg-primary"
         >
           {/* price */}
-          <span className="  bg-base-100 p-5">{price.toFixed(2)} $</span>
+          <span className="p-5">{price.toFixed(2)} $</span>
           {/* cart icon */}
           <div className="h-full bg-transparent p-3 ">
             <svg
