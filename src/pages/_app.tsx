@@ -15,7 +15,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           <Head key={"main"}>
             <title>{`Domino's Pizza`}</title>
           </Head>
-          <Component key={"components"} {...pageProps} />;
+          <Component key={"components"} {...pageProps} />
         </ShoppingCartProvider>
       </AnimatePresence>
     </ThemeProvider>
