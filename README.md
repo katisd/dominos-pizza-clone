@@ -1,4 +1,4 @@
-# Dominos piza clone
+# Dominos piza clone [Closed]
 * responsive
 * react, type-script
 * daisyui, tailwind, frammer-motion
